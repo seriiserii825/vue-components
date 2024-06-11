@@ -1,7 +1,7 @@
 import {AppLayoutsEnum} from "../layouts/types";
 export const ui_routes = [
     {
-        path: '/ui',
+        path: '/',
         name: 'ui',
         component: () => import('../views/ui/AdminView.vue'),
         meta: {
@@ -9,7 +9,7 @@ export const ui_routes = [
         },
     },
     {
-        path: '/ui/buttons',
+        path: '/buttons',
         name: 'button',
         component: () => import('../views/ui/ButtonsView.vue'),
         meta: {
@@ -17,7 +17,7 @@ export const ui_routes = [
         },
     },
     {
-        path: '/ui/forms',
+        path: '/forms',
         name: 'forms',
         component: () => import('../views/ui/FormsView.vue'),
         meta: {
@@ -25,7 +25,7 @@ export const ui_routes = [
         },
     },
     {
-        path: '/ui/checkbox',
+        path: '/checkbox',
         name: 'checkbox',
         component: () => import('../views/ui/CheckboxView.vue'),
         meta: {
@@ -33,7 +33,7 @@ export const ui_routes = [
         },
     },
     {
-        path: '/ui/radio',
+        path: '/radio',
         name: 'radio',
         component: () => import('../views/ui/RadioView.vue'),
         meta: {
@@ -41,7 +41,7 @@ export const ui_routes = [
         },
     },
     {
-        path: '/ui/select',
+        path: '/select',
         name: 'select',
         component: () => import('../views/ui/SelectView.vue'),
         meta: {
@@ -49,7 +49,7 @@ export const ui_routes = [
         },
     },
     {
-        path: '/ui/input',
+        path: '/input',
         name: 'input',
         component: () => import('../views/ui/InputView.vue'),
         meta: {
@@ -57,7 +57,7 @@ export const ui_routes = [
         },
     },
     {
-        path: '/ui/icons',
+        path: '/icons',
         name: 'icons',
         component: () => import('../views/IconsView.vue'),
         meta: {
