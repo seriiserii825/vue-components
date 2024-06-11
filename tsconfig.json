@@ -1,0 +1,19 @@
+{
+	"exclude": [
+		"node_modules",
+		"**/*.spec.ts"
+	],
+	"include": [
+		"./src/**/*"
+	],
+	"compilerOptions": {
+		"module": "esnext",
+		"moduleResolution": "node",
+		"target": "esnext",
+		"sourceMap": true,
+		"allowJs": true,
+		"importHelpers": true,
+		"isolatedModules": true,
+		"noEmit": true
+	}
+}

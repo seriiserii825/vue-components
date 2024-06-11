@@ -1,0 +1,12 @@
+.main-header {
+	padding: 2rem;
+	color: white;
+	background: $accent-dark;
+	a {
+		display: inline-block;
+		padding: 0 1rem;
+		&.router-link-exact-active {
+			color: $accent-light;
+		}
+	}
+}
