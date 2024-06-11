@@ -16,13 +16,12 @@ import MenuDropdown from '@/components/navigation/MenuDropdown.vue';
             label="Forms"
             icon="fa-user-secret"
             :items="[
-						{ title: 'Icons', url: '/ui/icons' },
-						{ title: 'Buttons', url: '/ui/buttons' },
-						{ title: 'Checkbox', url: '/ui/checkbox' },
-						{ title: 'Radio', url: '/ui/radio' },
-						{ title: 'Input', url: '/ui/input' },
-						{ title: 'Select', url: '/ui/select' },
-						{ title: 'Forms', url: '/ui/forms' },
+						{ title: 'Icons', url: '/icons' },
+						{ title: 'Buttons', url: '/buttons' },
+						{ title: 'Checkbox', url: '/checkbox' },
+						{ title: 'Radio', url: '/radio' },
+						{ title: 'Inut', url: '/input' },
+						{ title: 'Select', url: '/select' },
 					]"
         />
       </div>
