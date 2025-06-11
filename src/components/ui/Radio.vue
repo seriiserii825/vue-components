@@ -37,6 +37,7 @@ const isActive = computed(() => props.radio === props.id);
   }
   label {
     position: relative;
+    display: inline-block;
     padding: 1.6rem 1.6rem 1.6rem 6rem;
     border-radius: 8px;
     border: 1px solid rgba(0, 0, 0, 0.1);
