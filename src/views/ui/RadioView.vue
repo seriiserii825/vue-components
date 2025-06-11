@@ -1,67 +1,26 @@
-<script setup>
-import SectionHeader from "../../components/globals/SectionHeader.vue";
-import PreCode from "../../components/ui/PreCode.vue";
-import {onUnmounted, ref} from "vue";
-import usePrism from "../../hooks/usePrism";
-import Radio from "../../components/ui/Radio.vue";
+<script setup lang="ts">
+import { ref } from "vue";
+import Radio from "../Form/Radio.vue";
 
-
-const footballs_clubs = ref([
-  {id: 'f1', title: "Liverpool"},
-  {id: 'f2', title: "Manchester United"},
-  {id: 'f3', title: "Chelsea"},
-  {id: 'f4', title: "Arsenal"}
+const assistance_options = ref([
+  { id: 1, title: "Azienda / Ditta individuale" },
+  { id: 2, title: "Persona fisica" },
 ]);
 
-const selected_footballs_clubs = ref('Arsenal');
-
-const code_js = `
-const footballs_clubs = ref([
-  {id: 'f1', title: "Liverpool"},
-  {id: 'f2', title: "Manchester United"},
-  {id: 'f3', title: "Chelsea"},
-  {id: 'f4', title: "Arsenal"}
-]);
-
-const selected_footballs_clubs = ref('Arsenal');
-`;
-
-const code_vue = `
-<Radio v-for="item in footballs_clubs"
-       :key="item.id"
-       :id="item.id"
-       :value="item.title"
-       :label="item.title"
-       name="football_clubs"
-       v-model:radio="selected_footballs_clubs"
-/>
-`;
-onUnmounted(() => {
-  usePrism();
-});
+const selected_option = ref(assistance_options.value[0].id);
 </script>
+
 <template>
-  <div class='radio-view'>
-    <SectionHeader title="Radio"/>
-    <br><br>
-    <h3>Selected footballs clubs: </h3>
-    <br>
-    <div>{{ selected_footballs_clubs }}</div>
-    <br><br>
-    <Radio v-for="item in footballs_clubs"
-           :key="item.id"
-           :id="item.id"
-           :value="item.title"
-           :label="item.title"
-           name="football_clubs"
-           v-model:radio="selected_footballs_clubs"
-    />
-    <br><br>
-    <PreCode class-name="language-javascript">{{ code_js }}</PreCode>
-    <br><br>
-    <PreCode>{{ code_vue }}</PreCode>
+  <div class="ask-assistance">
+    <div class="ask-assistance__wrap">
+      <div v-for="item in assistance_options" class="ask-assistance__item">
+        <Radio
+          :key="item.id"
+          :id="item.id"
+          :label="item.title"
+          name="assistance_type"
+          v-model:radio="selected_option" />
+      </div>
+    </div>
   </div>
 </template>
-<style lang="scss" scoped>
-
-</style>
