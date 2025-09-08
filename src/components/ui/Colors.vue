@@ -4,7 +4,7 @@ import ColorsItem from '@/components/globals/ColorsItem.vue';
 
 const code = `
 :root {
-	--accent: #65B244;
+	--accent: #3c8dbc;
 	--accent-hover: #a86078;
 	--contrast: #f16529;
 	--contrast-hover: #fa7134;

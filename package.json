@@ -5,9 +5,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
-    "preinstall": "node -e \"if(process.env.npm_execpath.indexOf('yarn') === -1) throw new Error('You must use Yarn to install, not NPM')\"",
-    "predev": "node -e \"if(process.env.npm_execpath.indexOf('yarn') === -1) throw new Error('You must use Yarn to install, not NPM')\""
+    "preview": "vite preview"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
@@ -38,6 +36,6 @@
     "vite": "^4.0.0"
   },
   "engines": {
-    "node": "16.20.0"
+    "node": "20.*"
   }
 }
