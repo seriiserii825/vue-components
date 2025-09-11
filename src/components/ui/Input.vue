@@ -1,56 +1,38 @@
-<script setup>
-import {computed} from "@vue/runtime-core";
-
-const props = defineProps({
+<script setup lang="ts">
+defineProps({
   type: {
     type: String,
-    default: 'text',
+    default: "text",
   },
   label: {
     type: String,
     required: false,
+    default: null,
   },
   placeholder: {
     type: String,
     required: false,
+    default: null,
   },
   id: {
     type: String,
-    required: false,
+    required: true,
   },
   errors: {
     type: Array,
     required: false,
+    default: () => [],
   },
-  value: {
-    type: [String, Number],
-    required: false
-  }
 });
 
-const propsValue = computed(() => {
-  return props.value;
-});
-
-const emits = defineEmits(['update:value']);
-
-function changeHandler(e) {
-  let value = e.target.value;
-  emits('update:value', value);
-}
+const value = defineModel<string>("");
 </script>
 <template>
   <div class="input">
     <label v-if="label" :for="id">{{ label }}</label>
-    <input
-        :id="id"
-        :type="type"
-        :placeholder="placeholder !== undefined ? placeholder : null"
-        :value="propsValue"
-        @input="changeHandler"
-    />
+    <input :id="id" v-model="value" :name="id" :type="type" :placeholder="placeholder" />
     <div v-if="errors && errors.length" class="input__message input__message--error">
-      <p v-for="error in errors" :key="error.$uid">{{ error.$message }}</p>
+      <p v-for="(error, index) in errors" :key="index">{{ error }}</p>
     </div>
   </div>
 </template>
@@ -66,14 +48,13 @@ function changeHandler(e) {
   input {
     display: block;
     width: 100%;
-    height: 5.1rem;
+    height: 3.1rem;
     font-size: 1.4rem;
     font-weight: 400;
     text-indent: 3.2rem;
     color: #495057;
-    background: #E6FFFA;
-    border: 1px solid #D1F4EE;
-    border-radius: 1.6rem;
+    background: transparent;
+    border: 1px solid #ccc;
     &.input--success {
       border-color: var(--success);
     }
